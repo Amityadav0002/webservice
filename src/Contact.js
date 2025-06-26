@@ -1,6 +1,6 @@
 function abc(){
-    return <p>lorem10
-
+    return <p>
+      ram 
     </p>
 }
 export default abc

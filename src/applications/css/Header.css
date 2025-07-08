@@ -1,0 +1,32 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+.top-header {
+  background-color: #0e5bb3;
+  padding: 5px 0;
+  margin-left:5px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.left-side ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.left-side li a {
+  text-decoration: none;
+  color: #e8d7d7;
+  font-weight: bold;
+}
+
+.left-side li a:hover {
+  color: #007bff;
+}

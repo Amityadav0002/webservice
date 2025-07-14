@@ -1,78 +1,78 @@
 import React, { Fragment, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Make sure you import this
+// import './Userlogin.css'; // Optional: custom styles
 
 export default function Userlogin() {
-
   const [eml, seteml] = useState("Amit@gmail.com");
-  const [pass, setpass] = useState("123456")
+  const [pass, setpass] = useState("123456");
 
+  const navigate = useNavigate();
 
-  const updateeml = (data) => {
-    seteml(data.target.value);
-  };
-  const updatepass = (pasd) => {
-    setpass(pasd.target.value)
-  }
-   const mynav = useNavigate()
-  const validationl = () => {
-    if (eml === "" || pass === "") {
+  const updateeml = (e) => seteml(e.target.value);
+  const updatepass = (e) => setpass(e.target.value);
 
-      toast.warning("your email and password is blank", { position: "top-left", theme: "dark", autoClose: 2000 });
-    }
-    else{
-      toast.success("successfull");
+  const validation = () => {
+    if (eml.trim() === "" || pass.trim() === "") {
+      toast.warning("Your email and password cannot be blank.", {
+        position: "top-left",
+        theme: "dark",
+        autoClose: 2000
+      });
+    } else {
+      toast.success("Login successful", {
+        position: "top-center",
+        autoClose: 1500
+      });
       setTimeout(() => {
-       mynav("/Mydashboard");
-        
-      },2000);
+        navigate("/Studentcenter");
+      }, 1800);
     }
-  }
+  };
 
+  return (
+    <Fragment>
+      <div className="login-container">
+        <div className="card login-card shadow">
+          <h2 className="text-center mb-4">🎓 Student Login</h2>
 
-    return (
+          <div className="mb-3">
+            <label htmlFor="usernameInput" className="form-label">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              id="usernameInput"
+              placeholder="Enter your email"
+              value={eml}
+              onChange={updateeml}
+            />
+          </div>
 
-      <Fragment>
-        <div className="container d-flex justify-content-center align-items-center vh-100">
-          <div className="card p-4 shadow-lg" style={{ maxWidth: '400px', width: '100%' }}>
-            <h1 className="card-title text-center mb-4">Login Form</h1>
+          <div className="mb-3">
+            <label htmlFor="passwordInput" className="form-label">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="passwordInput"
+              placeholder="Enter your password"
+              value={pass}
+              onChange={updatepass}
+            />
+          </div>
 
-            <div className="mb-3">
-              <label htmlFor="usernameInput" className="form-label">Username</label>
-              <input
-                type="text"
-                className="form-control"
-                id="usernameInput"
-                name="username"
-                value={eml}
-                onInput={updateeml}
-
-              />
-
-              <ToastContainer />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="passwordInput" className="form-label">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                id="passwordInput"
-                name="password"
-                value={pass}
-                onInput={updatepass}
-
-              />
-
-
-            </div>
-
-            <div className="d-flex justify-content-between">
-              <button type="submit" className="btn btn-primary w-50" onClick={validationl}>Login</button>
-
-              <Link to="Usersignup" className="btn btn-secondary w-50 ms-2">Signup</Link>
-            </div>
+          <div className="d-flex justify-content-between mt-3">
+            <button className="btn btn-primary w-50 me-2" onClick={validation}>
+              Login
+            </button>
+            <Link to="/Usersignup" className="btn btn-outline-secondary w-50">
+              Signup
+            </Link>
           </div>
         </div>
-      </Fragment>
-    );
-  }
+      </div>
+
+      <ToastContainer />
+    </Fragment>
+  );
+}

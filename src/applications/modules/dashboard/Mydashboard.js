@@ -6,6 +6,13 @@ export default function Mydashboard() {
   return (
     <Fragment>
     <Header></Header>
+    <div className='container'>
+      <div className='row'>
+        <div className='col'>
+          <Nav></Nav>
+        </div>
+      </div>
+    </div>
     
     </Fragment>
   )

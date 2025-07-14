@@ -59,8 +59,8 @@ export const Myapplist = [
     icon: < ImHtmlFive  size={60} />, 
   },
   {
-    appName: "dashboard",
-    applink: "Mydashboard",
+    appName: "productlist",
+    applink: "Detailpage",
     icon: < ImHtmlFive  size={60} />, 
   },
 ];

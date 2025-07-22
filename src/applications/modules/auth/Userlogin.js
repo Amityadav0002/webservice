@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Make sure you import this
-// import './Userlogin.css'; // Optional: custom styles
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Userlogin() {
   const [eml, seteml] = useState("Amit@gmail.com");
@@ -33,7 +32,7 @@ export default function Userlogin() {
 
   return (
     <Fragment>
-      <div className="login-container">
+      <div className="login-container ">
         <div className="card login-card shadow">
           <h2 className="text-center mb-4">🎓 Student Login</h2>
 

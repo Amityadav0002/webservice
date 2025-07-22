@@ -4,13 +4,13 @@ import { ImHtmlFive } from "react-icons/im";
 
 export const Myapplist = [
   {
-    appName: "Usersignup",
-    applink: "Usersignup",
+    appName: "Userlogin",
+    applink: "Userlogin",
     icon: <FcManager size={60} />
   },
   {
-    appName: "Global Overview",
-    applink: "/global-overview",
+    appName: "myproject",
+    applink: "/Mydashboard",
     icon: <FcGlobe size={60} />
   },
   {
